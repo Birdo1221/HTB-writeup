@@ -1,7 +1,7 @@
 from pwn import *
 
 # Replace these with actual server details
-REMOTE_HOST = '94.237.59.63'  # Replace with the IP address or hostname of the remote server
+REMOTE_HOST = '10.10.10.10'  # Replace with the IP address or hostname of the remote server
 REMOTE_PORT = 56902  # Replace with the port number of the remote server
 
 # Connect to remote server
