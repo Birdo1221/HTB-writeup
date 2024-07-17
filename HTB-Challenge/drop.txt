@@ -1,0 +1,7 @@
+60.14.132.234
+182.165.248.68
+91.238.181.24
+
+iptables -A INPUT -s 60.14.132.234 -j DROP
+iptables -A INPUT -s 182.165.248.68 -j DROP
+iptables -A INPUT -s 91.238.181.24 -j DROP
